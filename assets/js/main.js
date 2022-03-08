@@ -64,6 +64,15 @@ let swipertestimonial = new Swiper(".testimonial__container", {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    breakpoints:{
+        576:{
+            slidesPerView:2,
+        },
+        768:{
+            slidesPerView:2,
+            spaceBetween:48,
+        },
+    },
   });
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll('section[id]')
@@ -116,4 +125,15 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+/*animacion para la parte del principio al recargar odificaciones en cuanto se agregue mas clases y más*/
+const scr=ScrollReveal({
+    origin: 'top',
+    distance:'60px',
+    duration:1500,
+    delay:10,
+    //reset:true
+})
 
+scr.reveal('.home__data')
+scr.reveal('.home__handle', {delay:300})
+scr.reveal('.home__social, .home__scroll' ,{delay:500, origin:'bottom'})
